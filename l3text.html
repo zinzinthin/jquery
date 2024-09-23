@@ -13,11 +13,11 @@
 	<h2>Here is awesome js library</h2>
 	<hr />
 
-	<h3>Welcome to jQuery Add</h3>
+	<h3>Welcome to <u>jQuery Add</u></h3>
 	<h3>This is awesome javascript library</h3>
 	<hr />
 
-	<h4>Welcome to jQuery Plugin</h4>
+	<h4>Welcome to <u>jQuery Plugin</u></h4>
 	<h4>Here is awesome js library</h4>
 	<hr />
 
@@ -33,17 +33,34 @@
 		//console.log(getfirsth1); //Welcome to <u>Jquery</u>
 
 		const getlasth1 = $('h1:last').html();
-		//console.log(getlasth1);
+		//console.log(getlasth1); //This is awesome js library
 		
-		$('h1:first').html(getlasth1);
+		$('h1:first').html(getlasth1);//This is awesome js library
+
+
 
 		$(document).ready(function(){
-			//text();
-			const getfirsth2 = $('h2:first').text();
+
+			//=>text();
+			 const getfirsth2 = $('h2:first').text();
 			//console.log(getfirsth2); //Welcome to jQuery
 
-			$('h2:last').text(getfirsth1);
-		});
+			$('h2:last').text(getfirsth2);
+		
+			//=> html() to text
+			const getfirsth3 = $('h3:first').html();
+			console.log(getfirsth3); //Welcome to <u>jQuery Add</u>
+
+			$('h3:last').text(getfirsth3); //Welcome to <u>jQuery Add</u>
+
+
+			//=> text to html
+			const getfirsth4 = $('h4:first').text();
+			console.log(getfirsth4); //Welcome to jQuery Plugin
+
+			$('h4:last').html(getfirsth4); //Welcome to jQuery Plugin
+
+			});
 
 
 	</script>
