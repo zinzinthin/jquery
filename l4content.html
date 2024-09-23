@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<htmL>
+<head>
+	<title>Contents method with filter</title>
+</head>
+<body>
+
+	<h1>Welcome to <u>jquery</u></h1>
+	<h2>Welcome to <u>jquery library</u></h2>
+	<h2>Welcome to <b>jquery library</b></h2>
+	
+	
+	<script src="./libs/jquery-3.7.1.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			const gettext = $('h1').contents();
+			console.log(gettext);
+
+			console.log($('h1').contents().text());//Welcome to jquery
+			console.log($('h1').text()); //Welcome to jquery
+
+			const gettexts = $('h2').text();
+			console.log(gettexts); //Welcome to jquery library
+			console.log($('h1,h2').text());
+
+			const text = $('h1').contents().filter('u').text();
+			console.log(text); //jquery
+
+			const texts = $('h1,h2').contents().filter('u').text();
+			console.log(texts); //jqueryjquery library
+
+			console.log($('h1,h2').contents().filter('u,b').text()) //jqueryjquery libraryjquery library
+
+			//console.log($('h1').contents().html()); //undefined
+
+			console.log($('h1').contents().filter('u').html()); //jquery
+
+			console.log($('h2').html()); //Welcome to <u>jquery library</u> //only first one 
+
+		});
+
+	</script>
+
+</body>
+</htmL>

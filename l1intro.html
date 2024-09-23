@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+</head>
+
+<body>
+    <h1 class="h1">Introduction <i>of Javascript</i></h1>
+    <h1 id="h1" class="h1">Welcom to jQuery</h1>
+    <h3>This is awesome js library</h3>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        console.log("hey");
+
+        $(document).ready(function () {
+            console.log("HI, I am from document");
+        });
+
+        $(window.document).ready(function () {
+            console.log("Hay I am from window.document");
+        });
+
+        jQuery(document).ready(function () {
+            console.log("Hay I am from document using jQuery method");
+        });
+
+        jQuery(window.document).ready(function () {
+            console.log("Hay I am from window.document using jQuery method");
+        });
+
+        $(document).ready(function () {
+            // console.log(document.getElementById("h1")); // element
+            //console.log(document.getElementsByClassName('h1')); //html collection
+            //console.log(document.getElementsByTagName('h3')); //html collection
+
+            //console.log(document.querySelector('#h1')); //element
+            //console.log(document.querySelector('.h1')); //element (how much elements are there, it shows only one)
+            //console.log(document.querySelector('h1')); //element
+            //console.log(document.querySelector('h1 i'));
+
+            //console.log(document.querySelectorAll('#h1')); //nodelist
+            //console.log(document.querySelectorAll('.h1')); //nodelist
+            //console.log(document.querySelectorAll('h1')); //nodelist
+            //console.log(document.querySelectorAll('#h1 i')); //nodelist
+
+            //$("#")
+            //$(".")
+            //$("h3")
+        
+
+        })
+    </script>
+</body>
+
+</html>
