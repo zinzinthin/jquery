@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Query</title>
+    <style>
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 50%;
+            background-color: #f4f4f4;
+
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Myanmar</h1>
+        <h1>Hello Myanmar</h1>
+        <h1>Hello Myanmar</h1>
+        <h1>Hello Myanmar</h1>
+    </div>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+            // $('h1').css({
+            //     'background-color' : 'blue',
+            //     'color' : '#fff',
+            //     'text-transform' : 'uppercase'
+            // });
+
+            // console.log($('h1'));
+            // console.log($('h1')[0]); //element
+            // console.log($('h1').eq(0)); //object(array)
+
+            //***********************Error => css() works on array object*********
+            // $('h1')[2].css({
+            //     'background-color' : 'blue',
+            //     'color' : '#fff',
+            //     'text-transform' : 'uppercase'
+            // });
+
+            $('h1').eq(2).css({
+                'background-color' : 'blue',
+                'color' : '#fff',
+                'text-transform' : 'uppercase'
+            });
+
+
+
+
+        });
+    </script>
+</body>
+</html>
