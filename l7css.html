@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+</head>
+<body>
+    <h1>Hello Myanmar</h1>
+    <h2>Hello Thailand</h2>
+    <h3>Hello India</h3>
+    <h4>Hello Singapor</h4>
+    <button type="button">Submit</button>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        //=> css function
+        $('button').click(function(){
+            // css(property,value)
+            $('h1').css('background-color','red');
+            $('h3').css('backgroundColor','green').css('color','blue');
+
+            //css({}) 
+
+            $('h2').css({
+                'background' : 'blue',
+                'color' : '#fff',
+                'font-style' : 'italic'
+            })
+        })
+
+
+    </script>
+</body>
+</html>
