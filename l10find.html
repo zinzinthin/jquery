@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find</title>
+    <style>
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            width: 600px;
+            background-color: #f4f4f4;
+
+            padding: 20px;
+
+            display: flex;
+        }
+
+        .box {
+            width: 100px;
+            height: 300px;
+
+            background-color: steelblue;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box b1">Box 1</div>
+        <div class="box b2">Box 2</div>
+        <div class="box b3">Box 3</div>
+        <div class="box b4">Box 4</div>
+        <div class="box b5">Box 5</div>
+    </div>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(() => {
+            // $('.container').click(function() {
+            //     $(this).find('.b1').css({
+            //         "height" : "200px",
+            //         "background-color":"orange"
+            //     });
+
+            // });
+
+            $('.container').hover(function () {
+
+                $(this).find('.b4,.b2').animate({
+                    width: "0",
+                    height: "0",
+                    opicity: "0"
+                },2000);
+            },
+                function () {
+                    $(this).find('.b4,.b2').animate({
+                        width: "100%",
+                        height: "100%",
+                        opicity: "1"
+                    });
+                });
+        });
+    </script>
+</body>
+
+</html>
