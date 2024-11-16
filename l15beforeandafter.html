@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After</title>
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h1>Ko Ko</h1>
+
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('h1').before("<span>Hey</span>");
+            $('h1').after("Bye Bye");
+        });
+    </script>
+</body>
+</html>
