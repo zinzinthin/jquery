@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Element</title>
+    <style>
+        .box{
+            border: 1px solid black;
+        }
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Su Su</h1>
+        <h1>Yu Yu</h1>
+        <h1>Pu Pu</h1>
+    </div>
+
+    <div class="container">
+
+    </div>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('h1').clone().appendTo('.container');
+            $('.container').append("append once<hr />");
+            $('h1').clone().appendTo('.container');
+            $('.container').append("append twice using h1 and it clones all h1<hr />");
+            $('.box h1').appendTo('.container');
+        });
+    </script>
+</body>
+</html>
