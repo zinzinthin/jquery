@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+    <style>
+        body{
+            height: 100vh;
+            display:grid;
+            place-items: center;
+        }
+        .container{
+            width: 50%;
+            height: 50%;
+            border: 3px solid red;
+
+            text-align: center;
+
+        }
+        .box{
+            width: 50%;
+            height: 50%;
+            margin: auto;
+
+            background-color: skyblue;
+            margin-bottom: 5px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">I am a child.</div>
+        <button type="button">Click Me</button>
+    </div>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('.container').mouseenter(()=>{
+            //     console.log('Mouse Enter');
+            // });
+
+            // $('.container').mouseover((e)=>{
+            //     console.log(e.type);
+            //     console.log(e.target);
+            // });
+
+            // $('.container').mouseleave((e)=>{
+            //     console.log(e.type);
+            //     console.log(e.target);
+            // });
+
+            // $('.container').mouseout((e)=>{
+            //     console.log(e.type);
+            //     console.log(e.target);
+            // });
+            // $('.container').hover((e)=>{
+            //     console.log(e.type);
+            //     console.log(e.target);
+            // });
+
+            // $('button').mousedown((e)=>{
+            //     console.log(e.type);
+            //     console.log(e.target);
+            // });
+
+            $('button').mouseup((e)=>{
+                console.log(e.type);
+                console.log(e.target);
+            });
+        });
+    </script>
+</body>
+</html>
