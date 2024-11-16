@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAl()</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Hello, my name is <span id="result" class="result"></span></h3>
+        <input type="text" name="name" id="name" class="name" placeholder="Enter your name">
+        <!-- <input type="button" id="button" value="Click Me"> -->
+    </div>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('#button').click(function(){
+            //     const name = $('#name').val();
+            //     $('.result').text(name);
+            // });
+
+            $('#name').change(showresult);
+
+            function showresult(){
+                const getname = $('#name').val();
+                $('.result').text(getname);
+            }
+        });
+    </script>
+</body>
+
+</html>
