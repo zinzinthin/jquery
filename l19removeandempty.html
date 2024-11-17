@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove and Empty</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+
+        div{
+            border: 1px dashed white;
+            padding: 5px;
+        }
+
+        a{
+            margin: 25px;
+        }
+    </style>
+</head>
+<body>
+    <p>Remove | Detach | Empty | Add</p>
+    <div class="div1">
+        <p style="color: red;">Delete all h1 by clicking div1</p>
+        <h1>H1 from div1</h1>
+        <h2>H2 from div1</h2>
+    </div>
+    <div class="div2">
+        <h1>H1 from div2</h1>
+        <h2>H2 from div2</h2>
+        <button type="button" id="btn-remove-div">Delete Div1</button>
+        <button type="button" id="btn-detach">Detach Div3</button>
+    </div>
+    <div class="div3">
+        <h1>H1 from div3</h1>
+        <h2>H2 from div3</h2>
+    </div>
+    <a href="#" id="btn-empty">Delete Child</a>
+    <a href="#" id="btn-reload">Reload</a>
+    <a href="" id="btn-change">Change style</a>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('.div1').click(function(){
+                $('h1').remove();
+            });
+            $('#btn-remove-div').click(()=>{
+                $('.div1').remove();
+            });
+            $('#btn-detach').click(()=>{
+                $('.div3').detach();
+            });
+            $('#btn-empty').click(()=>{
+                $('div').empty();
+            });
+            $('#btn-reload').click(()=>{
+                location.reload();
+            });
+            $('#btn-change').click((e)=>{
+                e.preventDefault();
+                $('h2').add('.div3 h1').css({
+                    "margin-left" : "25px",
+                    fontStyle : "italic"
+                });
+                $('div').add('p').add('button').css({
+                    border : "1px solid green",
+                    textAlign : "center"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
