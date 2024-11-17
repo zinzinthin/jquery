@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr and removeAttr</title>
+    <style>
+        .green{
+           color: green;
+        }
+        .red{
+            color: red;
+        }
+        .box{
+            border: 1px dotted red;
+            padding: 30px;
+        }
+
+        .bg-info{
+            background-color: steelblue;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="green">This is h1</h1>
+    <h1 class="">This is h1</h1>
+    <h2>This is h2</h2>
+    <img src="https://cdn.prod.website-files.com/61713dc07218ee71af5413af/63e090bf678a172d8733a594_Fitness%20Motivational%20Quotes%20by%20Experts-1.jpg" class="box" alt="" srcset="">
+    <div>
+        <button type="button" id="removeattr">Remove Attr</button>
+        <button type="button" id="btn-addclass">Add Class</button>
+        <button type="button" id="btn-removeclass">Remove Class</button>
+        <button type="button" id="btn-toggle">Toggle Class</button>
+    
+    </div>
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+
+            $('h1').attr('class','red'); //overwrite existing class
+           
+            $('h2').attr('class','box bg-info');
+
+            $('img').attr({
+                width:"300px",
+                height:"300px",
+                title :  "moti image",
+                alt: "test attr",
+                custom : "custom attr"
+            });
+
+            $('#removeattr').click(()=>{
+                $('h1').removeAttr('class'); 
+                $('img').removeAttr('width height'); 
+            });
+
+            $('#btn-addclass').click(()=>{
+                $('h1').addClass('green box'); //add new class without overrite
+            });
+
+            $('#btn-removeclass').click(()=>{
+                $('img').removeClass();
+                $('h2').removeClass('bg-info');
+            });
+
+            $('h1').click(function(){
+                let result = $(this).hasClass('green');
+                alert(result);
+            });
+
+            $('#btn-toggle').click(function(){
+                $('h2').toggleClass('bg-info');
+            });
+        });
+    </script>
+</body>
+</html>
