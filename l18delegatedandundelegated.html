@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegated and Undelegated</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        $(selector).delegated(selector,event,call back function){}
+    -->
+        <h1>Hello Ko Ko,</h1>
+        <button type="button" id="btn-delegate">Delegate and Undelegate</button>
+        <button type="button" id="btn-click">Simple Clike</button>
+        <button type="button" id="delegate">Delegate with Me</button>
+        <button type="button" id="btn-undelegate">Undelegate with me</button>
+        <script src="libs/jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                let x=0;
+                $('body').delegate('#btn-delegate','click',(e)=>{    
+                    (x<3)? $('h1').append('&#9829;')  : $('body').undelegate(e); 
+                    x++;
+                    console.log(x);
+                });
+              
+                $('#btn-click').click(()=>{
+                    $('h1').append('-');
+                    
+                });
+
+                $('body').delegate('#delegate','click',()=>{
+                    $('h1').append("how are you?");
+                });
+
+                $('#btn-undelegate').click(()=>{
+                    $('body').undelegate();
+                });
+            });
+        </script>
+</body>
+
+</html>
