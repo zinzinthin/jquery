@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is and Not</title>
+    <style>
+        body {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 900px;
+            display: flex;
+            background-color: #f4f4f4;
+            padding: 20px;
+
+        }
+
+        .box {
+            width: 150px;
+            height: 300px;
+        }
+
+        .square1 {
+            background-color: red;
+        }
+
+        .square2 {
+            background-color: green;
+        }
+
+        .square3 {
+            background-color: blue;
+        }
+
+        .square4 {
+            background-color: yellow;
+        }
+
+        .square5 {
+            background-color: brown;
+        }
+
+        .text-light{
+            color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>is and not methods</h1>
+        <p>This is awesome jQuery version 3.7.1</p>
+    </div>
+    <div class="container">
+        <div class="box square1">
+            <h4>Box1 by h4</h4>
+        </div>
+   
+        <div class="box square2"><h3>Box 2 by h3</h3></div>
+        
+        <div class="box square3"><h2 class="text-light">Box 3 by h2</h2></div>
+       
+        <div class="box square4"><h3>Box 4 by h3</h3></div>
+       
+        <div class="box square5"><h2>Box 5 by h2</h2>s</div>
+    </div>
+   
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(() => {
+           $('.container').click(()=>{
+            // if($('.box').children().is('h3')){
+            //     $('.box').children('h3').css('background-color','black');
+            // }
+
+            // if($('.box').children().is('h2')){
+            //    $('.box').children('h2').not('text-light').css('background','black');
+            // }
+
+            if($('.box').children().is('h2')){
+                $('.box').children().not('.text-light').css('background-color','pink');
+            }
+           });
+        });
+    </script>
+</body>
+
+</html>
