@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Unit</title>
+    <style>
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            width: 900px;
+            background-color: #f4f4f4;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+            padding: 20px;
+
+            text-align: center;
+        }
+
+        .div {
+            border: 1px solid #000;
+            padding: 30px;
+        }
+
+        ul {
+            border: 1px dashed red;
+            padding: 20px;
+        }
+
+        ul li {
+            border: 1px solid violet;
+        }
+
+        h1 {
+            background-color: green;
+            color: white;
+        }
+
+        button{
+            margin: 15px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="div1" class="div">I am div 1
+            <div id="div2" class="div">I am div 2
+                <div id="div3" class="div">I am div 3
+                    <ul>
+                        <li>
+                            <h1>Hello Box 1</h1>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button type="button" id="btn-closest">closest</button>
+        <button type="button" id="btn-parentsUntil">parentsUntil</button>
+    </div>
+
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(() => {
+            //closest()
+            $('#btn-closest').click(() => {
+                $('h1').closest('div').css({
+                    'color': 'blue',
+                    'font-size': '30px',
+                    'background': 'skyblue'
+                });
+            });
+
+
+            //parentsUntil()
+            $('h1').parentsUntil('div').css('background-color', 'steelblue');
+        });
+    </script>
+</body>
+
+</html>
