@@ -189,6 +189,24 @@
                 $('.square10').show('puff',1000);
             });
 
+            $('#btn-pulsate').click(()=>{
+                // $(".square11").effect('pulsate',2000); //ui effect
+                $(".square11").show('pulsate',{
+                    times : 10,
+                },3000); //jquery show with ui effect
+            });
+
+            // $(".box").show();
+            $('#btn-size').click(function(){    
+                $(".square12").effect('size',2000);
+            });
+
+            $('#btn-slide').click(()=>{
+                $(".square13").effect('slide',{
+                    direction : 'up',
+                },2000);
+            });
+
 
             
 
