@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Complete</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .container {
+            width: 50vw;
+            padding: 20px;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        .btn {
+            font-size: 15px;
+            padding: 10px 20px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="" method="get">
+            <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="" id="job" class="form-control">
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+
+        </form>
+    </div>
+
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const positions = [
+                "CEO",
+                "General Manager",
+                "Manager",
+                "Vice Manager",
+                "Supervisor",
+                "CFO",
+                "Finance Mnanger",
+                "Developer"
+            ];
+
+            $("#job").autocomplete({
+                source: positions,
+            });
+
+            $("form").submit(function(e){
+                const getjob = $("#job").val();
+                window.alert(`Job title is = ${getjob}`);
+                e.preventDefault();
+            })
+       
+        });
+    </script>
+
+  
+</body>
+
+</html>
